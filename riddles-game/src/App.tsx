@@ -4,12 +4,10 @@ import RiddleCard from "./RiddleCard";
 import { RiddleData } from "./RiddleData";
 
 function App() {
-  const [index, setIndex] = useState<number>(0);
-  const [isRiddleProp, setIsRiddleProp] = useState<boolean>(true);
+  const [index, setIndex] = useState<number>(Math.floor(Math.random() * 25));
 
   function generateRiddle(): void {
     setIndex(Math.floor(Math.random() * 25));
-    setIsRiddleProp(true);
   }
 
   return (
@@ -44,7 +42,7 @@ function App() {
         <RiddleCard
           riddle={RiddleData[index].riddle}
           answer={RiddleData[index].answer}
-          isRiddleProp={isRiddleProp}
+          index={index}
         />
       </div>
       <div

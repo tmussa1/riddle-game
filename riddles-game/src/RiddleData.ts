@@ -1,7 +1,7 @@
 export type Riddle = {
   riddle: string;
   answer: string;
-  isRiddleProp?: boolean;
+  index?: number;
 };
 
 export const RiddleData: Riddle[] = [

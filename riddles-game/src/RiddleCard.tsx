@@ -1,17 +1,17 @@
 import { Card } from "react-bootstrap";
 import { Riddle } from "./RiddleData";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-function RiddleCard({ riddle, answer, isRiddleProp }: Riddle) {
+function RiddleCard({ riddle, answer, index }: Riddle) {
   const [isRiddle, setIsRiddle] = useState<boolean>(true);
-  const [isRiddleProp1, setIsRiddleProp1] = useState<boolean | undefined>(
-    isRiddleProp
-  );
 
   function toggleAnswer(): void {
     setIsRiddle(!isRiddle);
-    setIsRiddleProp1(!isRiddleProp1);
   }
+
+  useEffect(() => {
+    setIsRiddle(true);
+  }, [index]);
 
   return (
     <div
@@ -27,12 +27,12 @@ function RiddleCard({ riddle, answer, isRiddleProp }: Riddle) {
       <Card style={{ color: isRiddle ? "#ff9a3c" : "#eb2632" }}>
         <Card.Body>
           <Card.Text>
-            {isRiddle && (
+            {isRiddle === true && (
               <h1>
                 <i>{riddle}</i>
               </h1>
             )}
-            {!isRiddle && !isRiddleProp1 && (
+            {isRiddle === false && (
               <h1>
                 <b>{answer}</b>
               </h1>
