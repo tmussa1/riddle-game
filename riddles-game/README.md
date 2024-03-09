@@ -2,7 +2,7 @@
 
 Submitted by: Tofik Mussa
 
-This web app: Riddle Game
+This web app: Riddle Game - website url - https://riddle-champions.netlify.app/
 
 Time spent: 3 hours spent in total
 
@@ -30,6 +30,8 @@ The following **additional** features are implemented:
 ## Video Walkthrough
 
 Here's a walkthrough of implemented required features:
+
+### If gif doesn't work, here is live website - https://riddle-champions.netlify.app/
 
 <img src='https://imgur.com/MrKdyQC.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
