@@ -34,7 +34,10 @@ function App() {
     setAnswer("");
   }
 
-  function handleAnswer(event): void {
+  function handleAnswer(event: {
+    preventDefault: () => void;
+    target: { value: string };
+  }): void {
     event.preventDefault();
     setAnswer(event.target.value.toUpperCase());
   }
