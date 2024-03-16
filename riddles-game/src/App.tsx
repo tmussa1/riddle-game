@@ -4,7 +4,7 @@ import RiddleCard from "./RiddleCard";
 import { RiddleData } from "./RiddleData";
 import ResultPopup from "./ResultPopup";
 
-const length = 25;
+const length = RiddleData.length;
 
 function App() {
   let ind: number = Math.floor(Math.random() * length);
@@ -31,6 +31,7 @@ function App() {
       setCorrect(false);
     }
     setAnswerSubmitted(true);
+    setAnswer("");
   }
 
   function handleAnswer(event): void {
@@ -72,7 +73,7 @@ function App() {
         style={{
           display: "flex",
           justifyContent: "center",
-          marginTop: "32px",
+          marginTop: "16px",
         }}
       >
         <RiddleCard
@@ -86,7 +87,7 @@ function App() {
         style={{
           display: "flex",
           justifyContent: "center",
-          marginTop: "32px",
+          marginTop: "16px",
         }}
       >
         <input
@@ -109,7 +110,7 @@ function App() {
         style={{
           display: "flex",
           justifyContent: "center",
-          marginTop: "32px",
+          marginTop: "16px",
         }}
       >
         <button

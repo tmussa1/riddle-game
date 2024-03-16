@@ -18,8 +18,8 @@ function RiddleCard({ riddle, answer, index, isSubmitted }: Riddle) {
   return (
     <div
       style={{
-        margin: "64px",
-        padding: "64px",
+        margin: "16px",
+        padding: "32px",
         background: isRiddle ? "#ff9a3c" : "#eb2632",
         display: "flex",
         justifyContent: "center",
