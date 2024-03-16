@@ -96,6 +96,7 @@ function App() {
         <input
           type="text"
           className="form-control col-3"
+          value={answer}
           id="answer"
           placeholder="Type Answer Here"
           onChange={handleAnswer}
