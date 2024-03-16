@@ -38,6 +38,13 @@ function App() {
     setAnswer(event.target.value.toUpperCase());
   }
 
+  function previousRiddle(): void {
+    ind = history[history.length - 2];
+    setIndex(ind);
+    setCorrectAnswer(RiddleData[ind].answer.toUpperCase());
+    setHistory([...history.slice(0, history.length - 1)]);
+  }
+
   return (
     <>
       ({!answerSubmitted} ?
@@ -107,10 +114,26 @@ function App() {
       >
         <button
           type="button"
+          className="btn btn-outline-primary btn-lg"
+          onClick={previousRiddle}
+        >
+          Previous Riddle
+        </button>
+        <div className="col-1"></div>
+        <button
+          type="button"
+          className="btn btn-outline-success btn-lg"
+          onClick={generateRiddle}
+        >
+          Next Riddle
+        </button>
+        <div className="col-1"></div>
+        <button
+          type="button"
           className="btn btn-outline-danger btn-lg"
           onClick={generateRiddle}
         >
-          Shuffle To Play Another Riddle
+          Shuffle Riddles
         </button>
       </div>
       :{" "}
