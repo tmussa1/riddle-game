@@ -2,6 +2,7 @@ export type Riddle = {
   riddle: string;
   answer: string;
   index?: number;
+  isSubmitted?: boolean;
 };
 
 export const RiddleData: Riddle[] = [

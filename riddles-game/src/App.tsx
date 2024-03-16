@@ -15,7 +15,7 @@ function App() {
   );
   const [answer, setAnswer] = useState<string>("");
   const [answerSubmitted, setAnswerSubmitted] = useState<boolean>(false);
-  const [correct, setCorrect] = useState<boolean>(false);
+  const [correct, setCorrect] = useState<boolean | undefined>(undefined);
 
   function generateRiddle(): void {
     ind = Math.floor(Math.random() * length);
@@ -72,6 +72,7 @@ function App() {
           riddle={RiddleData[index].riddle}
           answer={RiddleData[index].answer}
           index={index}
+          isSubmitted={answerSubmitted || correct === false}
         />
       </div>
       <div
@@ -109,12 +110,12 @@ function App() {
           className="btn btn-outline-danger btn-lg"
           onClick={generateRiddle}
         >
-          Shuffle Riddles
+          Shuffle To Play Another Riddle
         </button>
       </div>
       :{" "}
       <ResultPopup
-        correct={correct}
+        correct={correct!}
         open={answerSubmitted}
         setAns={setAnswerSubmitted}
       />

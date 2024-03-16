@@ -2,11 +2,13 @@ import { Card } from "react-bootstrap";
 import { Riddle } from "./RiddleData";
 import { useEffect, useState } from "react";
 
-function RiddleCard({ riddle, answer, index }: Riddle) {
+function RiddleCard({ riddle, answer, index, isSubmitted }: Riddle) {
   const [isRiddle, setIsRiddle] = useState<boolean>(true);
 
   function toggleAnswer(): void {
-    setIsRiddle(!isRiddle);
+    if (isSubmitted) {
+      setIsRiddle(!isRiddle);
+    }
   }
 
   useEffect(() => {
